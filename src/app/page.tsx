@@ -1,14 +1,21 @@
-import { Footer } from "../components/Footer"
-import { Sidebar } from "../components/Sidear"
-import { Home as ChevronLeft, ChevronRight, Play } from "lucide-react"
-import Image from "next/image";
+import { Footer } from "../components/footer"
+import { Sidebar } from "../components/sidear"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import GoodAfternoon from "./_components/goodafternoon";
+import MadeFrom from "./_components/madefrom";
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col">
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6">
+    <div className="h-screen flex flex-col relative">
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar com scroll caso o conteúdo seja maior que a tela */}
+        <div className="h-full overflow-auto">
+          <Sidebar />
+          <div className="pb-12"></div>
+        </div>
+
+        {/* Main com scroll, garantindo espaço para o Footer */}
+        <main className="flex-1 p-4 h-screen overflow-auto pb-16">
           <div className="flex items-center gap-4">
             <button className="rounded-full bg-black/40 p-1">
               <ChevronLeft />
@@ -18,97 +25,20 @@ export default function Home() {
             </button>
           </div>
 
-          <h1 className="text-semibold text-3xl mt-10">Good Afternoon</h1>
+          <h1 className="text-semibold text-2xl mt-10">Good Afternoon</h1>
+          <GoodAfternoon />
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
-            <a href="" className="bg-white/5 group flex items-center gap-4 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={104} height={104} alt="Capa do álbum Foo Fighters" />
-              <strong>Wasting Light</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play />
-              </button>
-
-            </a>
-            <a href="" className="bg-white/5 group flex items-center gap-4 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={104} height={104} alt="Capa do álbum Foo Fighters" />
-              <strong>Wasting Light</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play />
-              </button>
-
-            </a>
-            <a href="" className="bg-white/5 group flex items-center gap-4 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={104} height={104} alt="Capa do álbum Foo Fighters" />
-              <strong>Wasting Light</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play />
-              </button>
-
-            </a>
-            <a href="" className="bg-white/5 group flex items-center gap-4 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={104} height={104} alt="Capa do álbum Foo Fighters" />
-              <strong>Wasting Light</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play />
-              </button>
-
-            </a>
-            <a href="" className="bg-white/5 group flex items-center gap-4 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={104} height={104} alt="Capa do álbum Foo Fighters" />
-              <strong>Wasting Light</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play />
-              </button>
-
-            </a>
-            <a href="" className="bg-white/5 group flex items-center gap-4 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={104} height={104} alt="Capa do álbum Foo Fighters" />
-              <strong>Wasting Light</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play />
-              </button>
-
-            </a>
-          </div>
-
-          <h2 className="text-semibold text-2xl mt-10">Made form Diego Schell Fernandez</h2>
-
-          <div className="grid grid-cols-6 gap-8 mt-4">
-            <a href="" className="bg-white/5 p-2 rounded-md flex flex-col gap-2 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={120} height={120} alt="Capa do álbum Foo Fighters" className="w-full" />
-              <strong className="font-semibold">Wasting Light</strong>
-              <span className="text- text-zinc-500">Foo Fighters</span>
-            </a>
-            <a href="" className="bg-white/5 p-2 rounded-md flex flex-col gap-2 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={120} height={120} alt="Capa do álbum Foo Fighters" className="w-full" />
-              <strong className="font-semibold">Wasting Light</strong>
-              <span className="text- text-zinc-500">Foo Fighters</span>
-            </a>
-            <a href="" className="bg-white/5 p-2 rounded-md flex flex-col gap-2 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={120} height={120} alt="Capa do álbum Foo Fighters" className="w-full" />
-              <strong className="font-semibold">Wasting Light</strong>
-              <span className="text- text-zinc-500">Foo Fighters</span>
-            </a>
-            <a href="" className="bg-white/5 p-2 rounded-md flex flex-col gap-2 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={120} height={120} alt="Capa do álbum Foo Fighters" className="w-full" />
-              <strong className="font-semibold">Wasting Light</strong>
-              <span className="text- text-zinc-500">Foo Fighters</span>
-            </a>
-            <a href="" className="bg-white/5 p-2 rounded-md flex flex-col gap-2 hover:bg-white/10 transition-colors">
-              <Image src="/album.jpg" width={120} height={120} alt="Capa do álbum Foo Fighters" className="w-full" />
-              <strong className="font-semibold">Wasting Light</strong>
-              <span className="text- text-zinc-500">Foo Fighters</span>
-            </a>
-          </div>
+          <h2 className="text-semibold text-xl mt-10">Made from Diego Schell Fernandez</h2>
+          <MadeFrom />
+          <div className="pb-12"></div>
         </main>
       </div>
-      <Footer />
+
+      {/* Footer fixo na parte inferior da tela */}
+      <div className="absolute bottom-0 w-full">
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
+
